@@ -1,0 +1,63 @@
+/*Clases para uso del menú*/
+.active{
+	background: darken(@bg-menu, 2%);
+	border-radius: 3px; 
+}
+/*Estilos para el contenedor del logo*/
+figure{
+	margin:0;
+	height: 45px;
+	width: 45px;
+	a{
+		img{
+			width: 100%;
+		}
+	}
+}
+.figure-logo{
+	display: inline-block;
+}
+/*fin*/
+
+/*Contenedor menú*/
+.contenedor-menu{
+	background: @bg-menu;
+	padding: 5px 0;
+}
+/*Estilos para el main-menu y sus hijos*/
+.main-menu{
+	float: right;
+	vertical-align: top;
+	.menu{
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		li{
+			display:inline-block;
+			a{
+				border-top: 4px solid transparent;
+				display: block;
+				text-align: center;
+				padding: 10px 20px;
+				&:hover{
+					background: darken(@bg-menu, 2%);
+					border-top: 4px solid white;
+					color: @text-white;
+				}
+			}
+		}
+	}
+}
+/*fin*/
+
+/*varios*/
+.presentacion{
+	margin-top: 2em;
+	h1{
+		text-align: center;
+	}
+	p{
+		font-size: 18px;
+		text-align: center;
+	}
+}
