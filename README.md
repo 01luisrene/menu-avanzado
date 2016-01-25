@@ -4,6 +4,8 @@ Este pequeño proyecto fue creado con la única intención de facilitar la imple
 
 [Bootstrap](http://getbootstrap.com)
 
+Usado solamente para darle apariencia al diseño.
+
 ## Librerías JS
 
 [jQuery](https://jquery.com/download/)
