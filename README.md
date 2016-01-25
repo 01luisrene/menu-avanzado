@@ -1,5 +1,5 @@
-# menu avanzado
-Este es un menú avanzado para que que te facilite la construcción de tu sitio web.
+# Menú Web
+Este pequeño proyecto fue creado con la única intención de facilitar la implementación del menú de su sitio web.
 ## Framework
 
 [Bootstrap](http://getbootstrap.com)
