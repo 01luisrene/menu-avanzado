@@ -4,7 +4,8 @@
 	border-radius: 3px; 
 }
 /*Estilos para el contenedor del logo*/
-figure{
+.figure-logo{
+	display: inline-block;
 	margin:0;
 	height: 45px;
 	width: 45px;
@@ -14,8 +15,9 @@ figure{
 		}
 	}
 }
-.figure-logo{
-	display: inline-block;
+
+.ico-menu{
+	display: none;
 }
 /*fin*/
 
@@ -60,4 +62,64 @@ figure{
 		font-size: 18px;
 		text-align: center;
 	}
+}
+
+/*mediaqueries*/
+@media screen and (max-width: 480px){
+
+}
+@media (max-width: 767px){
+
+body{
+	background: tomato; 
+}
+
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.figure-logo{
+		display: block;
+		margin:0 auto 5px auto;
+		height: 45px;
+		width: 45px;
+		a{
+			img{
+				width: 100%;
+			}
+		}
+	}
+	/*Estilos para el main-menu y sus hijos*/
+	.main-menu{
+		float: none;
+		vertical-align: top;
+		.menu{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			li{
+				display:inline-block;
+				margin-top: 3px;
+				a{
+					border-top: 4px solid transparent;
+					display: block;
+					text-align: center;
+					padding: 10px 20px;
+					&:hover{
+						background: darken(@bg-menu, 2%);
+						border-top: 4px solid white;
+						color: @text-white;
+					}
+				}
+			}
+		}
+	}
+	/*fin*/
+}
+@media (min-width: 992px) and (max-width: 1199px){
+
+
+}
+@media (min-width: 1200px)
+{
+	
 }

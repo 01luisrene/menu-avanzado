@@ -4,16 +4,17 @@
   border-radius: 3px;
 }
 /*Estilos para el contenedor del logo*/
-figure {
+.figure-logo {
+  display: inline-block;
   margin: 0;
   height: 45px;
   width: 45px;
 }
-figure a img {
+.figure-logo a img {
   width: 100%;
 }
-.figure-logo {
-  display: inline-block;
+.ico-menu {
+  display: none;
 }
 /*fin*/
 /*Contenedor menú*/
@@ -56,4 +57,48 @@ figure a img {
 .presentacion p {
   font-size: 18px;
   text-align: center;
+}
+/*mediaqueries*/
+@media (max-width: 767px) {
+  body {
+    background: tomato;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .figure-logo {
+    display: block;
+    margin: 0 auto 5px auto;
+    height: 45px;
+    width: 45px;
+  }
+  .figure-logo a img {
+    width: 100%;
+  }
+  /*Estilos para el main-menu y sus hijos*/
+  .main-menu {
+    float: none;
+    vertical-align: top;
+  }
+  .main-menu .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+  .main-menu .menu li {
+    display: inline-block;
+    margin-top: 3px;
+  }
+  .main-menu .menu li a {
+    border-top: 4px solid transparent;
+    display: block;
+    text-align: center;
+    padding: 10px 20px;
+  }
+  .main-menu .menu li a:hover {
+    background: #00b588;
+    border-top: 4px solid white;
+    color: #ffffff;
+  }
+  /*fin*/
 }
