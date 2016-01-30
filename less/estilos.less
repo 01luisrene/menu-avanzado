@@ -1,9 +1,20 @@
+nav, article, aside, section, main, menu, footer, figure, div{
+	display: block;
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 /*Clases para uso del menú*/
 .active{
 	background: darken(@bg-menu, 2%);
 	border-radius: 3px; 
 }
 /*Estilos para el contenedor del logo*/
+.contenedor-ico{
+	display: inline-block;
+}
 .figure-logo{
 	display: inline-block;
 	margin:0;
@@ -73,9 +84,115 @@
 body{
 	background: tomato; 
 }
+	/*Contenedor menú*/
+	.contenedor-menu{
+		position: relative;
+		background: @bg-menu;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.contenedor-ico{
+		display: block;
+		height: 45px;
+		&:before,
+	    &:after {
+	      content: " "; // 1
+	      display: table; // 2
+	    }
+	    &:after {
+	      clear: both;
+	    }
+	}
+	.figure-logo{
+		display: block;
+		margin:0 auto 5px auto;
+		float: left;
+		height: 45px;
+		width: 45px;
 
+		a{
+			img{
+				width: 100%;
+			}
+		}
+	}
+	.ico-menu{
+		background: white;
+		border-radius: 3px;
+		cursor: pointer;
+		padding: 5px 7px;
+		margin-top: 6.6px;
+		display: block;
+		float: right;
+		height: 32px;
+		width: 38px;
+	}
+	/*Estilos para el main-menu y sus hijos*/
+	.main-menu{
+		vertical-align: top;
+		.menu{
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			li{
+				display:inline-block;
+				margin-top: 3px;
+				a{
+					border-top: 4px solid transparent;
+					display: block;
+					text-align: center;
+					padding: 10px 20px;
+					&:hover{
+						background: darken(@bg-menu, 2%);
+						border-top: 4px solid white;
+						color: @text-white;
+					}
+				}
+			}
+		}
+	}
+	/*fin*/
+	.ico-menu-left{
+		display: block;
+		.figure-logo{
+			float: right;
+		}
+		.ico-menu{
+			float: left;
+		}
+	}
+	.ico-menu-center{
+		display: block;
+		height: 95px;
+		width: 100%;
+		.contenedor-logo{
+			background: transparent;
+			display: block;
+			margin-top: 45px;
+			min-height: 45px;
+			width: 100%;
+			.figure-logo{
+				display: block;
+				margin: 0 auto;
+				float: none;
+			}
+		}
+		.ico-menu{
+			position: absolute;
+			top: 5px;
+			bottom: 5px;
+			left: 50%;
+			margin-left: -19px;
+			display: block;
+			float: none;
+		}
+	}
 }
 @media (min-width: 768px) and (max-width: 991px){
+	.contenedor-ico{
+		display: block;
+	}
 	.figure-logo{
 		display: block;
 		margin:0 auto 5px auto;
