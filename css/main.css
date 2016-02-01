@@ -19,6 +19,9 @@ div {
   background: #00b588;
   border-radius: 3px;
 }
+.active > a {
+  color: white !important;
+}
 /*Estilos para el contenedor del logo*/
 .contenedor-ico {
   display: inline-block;
@@ -43,6 +46,7 @@ div {
 }
 /*Estilos para el main-menu y sus hijos*/
 .main-menu {
+  display: inline-block;
   float: right;
   vertical-align: top;
 }
@@ -56,6 +60,7 @@ div {
 }
 .main-menu .menu li a {
   border-top: 4px solid transparent;
+  color: #1F1F1F;
   display: block;
   text-align: center;
   padding: 10px 20px;
@@ -79,27 +84,16 @@ div {
 }
 /*mediaqueries*/
 @media (max-width: 767px) {
-  body {
-    background: tomato;
-  }
   /*Contenedor menú*/
   .contenedor-menu {
     position: relative;
     background: #00bf8f;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
   .contenedor-ico {
     display: block;
     height: 45px;
-  }
-  .contenedor-ico:before,
-  .contenedor-ico:after {
-    content: " ";
-    display: table;
-  }
-  .contenedor-ico:after {
-    clear: both;
   }
   .figure-logo {
     display: block;
@@ -110,6 +104,12 @@ div {
   }
   .figure-logo a img {
     width: 100%;
+  }
+  .hide-logo {
+    display: none !important;
+  }
+  .height-contenedor-ico {
+    height: 40px !important;
   }
   .ico-menu {
     background: white;
@@ -124,16 +124,22 @@ div {
   }
   /*Estilos para el main-menu y sus hijos*/
   .main-menu {
-    vertical-align: top;
+    border-top: thin solid #E1E1E1;
+    display: none;
+    padding-top: 6.5px;
+    margin-top: 6.5px;
+    margin-left: -15px;
+    margin-right: -15px;
+    float: none;
   }
   .main-menu .menu {
+    display: block;
     list-style-type: none;
-    padding: 0;
-    margin: 0;
     text-align: center;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .main-menu .menu li {
-    display: inline-block;
     margin-top: 3px;
   }
   .main-menu .menu li a {
@@ -150,6 +156,7 @@ div {
   /*fin*/
   .ico-menu-left {
     display: block;
+    height: 45px;
   }
   .ico-menu-left .figure-logo {
     float: right;
@@ -159,14 +166,12 @@ div {
   }
   .ico-menu-center {
     display: block;
-    height: 95px;
+    height: 90px;
     width: 100%;
   }
   .ico-menu-center .contenedor-logo {
     background: transparent;
     display: block;
-    margin-top: 45px;
-    min-height: 45px;
     width: 100%;
   }
   .ico-menu-center .contenedor-logo .figure-logo {
@@ -175,16 +180,33 @@ div {
     float: none;
   }
   .ico-menu-center .ico-menu {
-    position: absolute;
-    top: 5px;
-    bottom: 5px;
-    left: 50%;
-    margin-left: -19px;
     display: block;
+    margin: 6.5px auto 0 auto;
     float: none;
+  }
+  .list-left li {
+    display: block !important;
+  }
+  .list-left li a {
+    text-align: left !important;
+  }
+  .list-right li {
+    display: block !important;
+  }
+  .list-right li a {
+    text-align: right !important;
+  }
+  .list-center li {
+    display: block !important;
+  }
+  .list-center li a {
+    text-align: center !important;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
+  body {
+    background: tomato;
+  }
   .contenedor-ico {
     display: block;
   }
@@ -196,6 +218,9 @@ div {
   }
   .figure-logo a img {
     width: 100%;
+  }
+  .hide-logo {
+    display: none !important;
   }
   /*Estilos para el main-menu y sus hijos*/
   .main-menu {
