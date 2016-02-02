@@ -86,10 +86,9 @@ div {
 @media (max-width: 767px) {
   /*Contenedor menú*/
   .contenedor-menu {
-    position: relative;
     background: #00bf8f;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   .contenedor-ico {
     display: block;
@@ -97,19 +96,13 @@ div {
   }
   .figure-logo {
     display: block;
-    margin: 0 auto 5px auto;
+    margin: 0 auto;
     float: left;
     height: 45px;
     width: 45px;
   }
   .figure-logo a img {
     width: 100%;
-  }
-  .hide-logo {
-    display: none !important;
-  }
-  .height-contenedor-ico {
-    height: 40px !important;
   }
   .ico-menu {
     background: white;
@@ -166,7 +159,7 @@ div {
   }
   .ico-menu-center {
     display: block;
-    height: 90px;
+    height: 82px;
     width: 100%;
   }
   .ico-menu-center .contenedor-logo {
@@ -176,12 +169,12 @@ div {
   }
   .ico-menu-center .contenedor-logo .figure-logo {
     display: block;
-    margin: 0 auto;
     float: none;
+    margin: 0 auto 5px auto;
   }
   .ico-menu-center .ico-menu {
     display: block;
-    margin: 6.5px auto 0 auto;
+    margin: 0 auto;
     float: none;
   }
   .list-left li {
@@ -202,11 +195,16 @@ div {
   .list-center li a {
     text-align: center !important;
   }
+  .hide-logo .contenedor-logo {
+    display: none;
+  }
+  .height-menu {
+    height: 42px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  body {
-    background: tomato;
-  }
   .contenedor-ico {
     display: block;
   }

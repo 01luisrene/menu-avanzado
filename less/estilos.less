@@ -89,10 +89,9 @@ nav, article, aside, section, main, menu, footer, figure, div{
 
 	/*Contenedor menú*/
 	.contenedor-menu{
-		position: relative;
 		background: @bg-menu;
-		padding-top: 0;
-		padding-bottom: 0;
+		padding-top: 5px;
+		padding-bottom: 5px;
 	}
 	.contenedor-ico{
 		display: block;
@@ -100,7 +99,7 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	}
 	.figure-logo{
 		display: block;
-		margin:0 auto 5px auto;
+		margin:0 auto;
 		float: left;
 		height: 45px;
 		width: 45px;
@@ -111,12 +110,7 @@ nav, article, aside, section, main, menu, footer, figure, div{
 			}
 		}
 	}
-	.hide-logo{
-		display: none !important;
-	}
-	.height-contenedor-ico{
-		height: 40px !important;
-	}
+
 	.ico-menu{
 		background: white;
 		border-radius: 3px;
@@ -172,7 +166,7 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	}
 	.ico-menu-center{
 		display: block;
-		height: 45px * 2;
+		height: 82px;
 		width: 100%;
 		.contenedor-logo{
 			background: transparent;
@@ -180,13 +174,13 @@ nav, article, aside, section, main, menu, footer, figure, div{
 			width: 100%;
 			.figure-logo{
 				display: block;
-				margin: 0 auto;
 				float: none;
+				margin: 0 auto 5px auto;
 			}
 		}
 		.ico-menu{
 			display: block;
-			margin: 6.5px auto 0 auto;
+			margin:0 auto;
 			float: none;
 		}
 	}
@@ -214,10 +208,17 @@ nav, article, aside, section, main, menu, footer, figure, div{
 			}
 		}
 	}
+	.hide-logo .contenedor-logo{
+		display: none;
+	}
+	.height-menu{
+		height: 42px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 
 }
 @media (min-width: 768px) and (max-width: 991px){
-	body{background: tomato;}
 	.contenedor-ico{
 		display: block;
 	}
