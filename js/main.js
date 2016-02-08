@@ -1,19 +1,22 @@
 $(document).ready(function(){
 	var menu = $('.main-menu');
-	//script para colocar el menú estático
+	/*
+	Esta línea de código llama a la función de la libreria scrollToFixed
+	----
+	Sirve para que el menú se quede fijo
+	*/
 	$('#js-contenedor-menu').scrollToFixed();
 
+	/*
+	Esta función sirve para que cuando el usuario haga click en el botón de menú se despliegue o repliegue.
+	----
+	Se podra apreciar en pantallas menores a 768px
+	*/
 	$('#js-ico-menu').on('click',function(e){
 		e.preventDefault();
 		menu.slideToggle();                 
 	});
 
-	$(window).resize(function(event) {
-		var w = $(window).width();
-		if (w > 768 && menu.is(':hidden')) {
-			menu.removeAttr('style');
-		};
-	});
 
 	var scroleo = function(ancho){
 		if($(window).scrollTop() > 1) {
@@ -32,12 +35,18 @@ $(document).ready(function(){
 			}
 		}
 	};
+
 	$(window).on('scroll', function() {
 		var ancho = $(window).width();
 		scroleo(ancho)
+		//Esta función sirve para validar cuando el navegador, es cambiado de tamaño manualmente. 
 		$(window).resize(function() {
 			var ancho = $(window).width();
 			scroleo(ancho);
+			//esta condición de cumplira si la pantalla es mayor a 768px y el menú web lince esta oculto
+			if (ancho > 768 && menu.is(':hidden')) {
+				menu.removeAttr('style');
+			};
 		});
 	});
 });
