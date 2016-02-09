@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	var menu = $('.main-menu');
+	var menu = $('.box-main-menu');
 	/*
 	Esta línea de código llama a la función de la libreria scrollToFixed
 	----
@@ -12,11 +12,20 @@ $(document).ready(function(){
 	----
 	Se podra apreciar en pantallas menores a 768px
 	*/
-	$('#js-ico-menu').on('click',function(e){
+	$('#js-icono-menu-movil').on('click',function(e){
 		e.preventDefault();
 		menu.slideToggle();                 
 	});
 
+	//Esta función sirve para validar cuando el navegador, es cambiado de tamaño manualmente.
+	$(window).resize(function() {
+		//esta condición sirve para mostrar el menú si esta oculto.
+		//cuando la pantalla sea mayor a 768px
+		var w = $(window).width();
+		if (w > 768 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		};
+	});
 
 	var scroleo = function(ancho){
 		if($(window).scrollTop() > 1) {
@@ -24,14 +33,14 @@ $(document).ready(function(){
 				$('#js-contenedor-menu #js-contenedor-logo').addClass('hide-logo');
 			}
 			if(ancho <= 767){
-				$('#js-contenedor-menu .ico-menu-center').addClass('hide-logo height-menu');
+				$('#js-contenedor-menu .icono-menu-movil-center').addClass('hide-logo height-menu');
 			}
 		} else{
 			if(ancho >= 768 && ancho <= 991){
 				$('#js-contenedor-menu #js-contenedor-logo').removeClass('hide-logo');
 			}
 			if(ancho <= 767){
-				$('#js-contenedor-menu .ico-menu-center').removeClass('hide-logo height-menu');
+				$('#js-contenedor-menu .icono-menu-movil-center').removeClass('hide-logo height-menu');
 			}
 		}
 	};
@@ -43,10 +52,13 @@ $(document).ready(function(){
 		$(window).resize(function() {
 			var ancho = $(window).width();
 			scroleo(ancho);
-			//esta condición de cumplira si la pantalla es mayor a 768px y el menú web lince esta oculto
-			if (ancho > 768 && menu.is(':hidden')) {
-				menu.removeAttr('style');
-			};
 		});
 	});
+
+	/* No tomar importancia a estos scripts*/
+
+	//https://highlightjs.org/
+	 $('pre code').each(function(i, block) {
+	    hljs.highlightBlock(block);
+	 });
 });

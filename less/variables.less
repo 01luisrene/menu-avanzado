@@ -1,3 +1,36 @@
 //variables
 @bg-menu: lighten(#008C69, 10%);
-@text-white: #fff;
+
+//name app
+@color-text-name-app: #242424;
+@fz-text-name-app: 2em;
+
+//logo
+//cambiar la variable si quiere modificar el tamaño por defecto, afecta a todo el menú web tenga cuidado
+@altura-logo: 45px; 
+@ancho-logo: @altura-logo; //ancho del logo
+
+//variables para desktop
+@altura-menu: @altura-logo; //altura del menú web
+
+//link
+@color-text-link: #1F1F1F; //color de texto por defecto item del menú
+@fz-link: 14px; // tamaño del texto para los item del menú
+@padding-link: ((@altura-logo / 2) - 12.5) 20px; //padding de los link
+@size-border-top: 4px; //tamaño borde top cuando cuando se pasa el mouse
+@color-border-top: #FFFF42; //color borde top cuando cuando se pasa el mouse
+@color-text-hover: #fff; //color de texto para hover
+@text-color-active: #fff; //color del texto cuando se aplica la clase active
+
+/*variables para icono-menu-center*/
+@altura-contenedor-iconos: 45px; //altura del contenedor de iconos
+@height-menu: 82px; //altura inicial
+@altura-menu-movil-scroll: 45px; //altura cuando el usuario hace scroll
+//alto y ancho del logo para móvil
+@altura-logo-movil: 45px;
+@ancho-logo-movil: 45px;
+
+@padding-link-movil: 10px 20px; //padding para los link menú web
+
+//color del borde del icono del menú móvil
+@color-borde-icono: #606060;

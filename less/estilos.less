@@ -6,46 +6,47 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
-/*Clases para uso del menú*/
-.active{
-	background: darken(@bg-menu, 2%);
-	border-radius: 3px; 
-	> a{
-		color: white !important;
-	}
+//contenedor menú
+.contenedor-menu{
+	background: @bg-menu;
+	padding: 5px 0;
 }
 
-/*Estilos para el contenedor del logo*/
-.contenedor-ico{
+//Estilos para logo
+.contenedor-iconos{
 	display: inline-block;
+}
+.name-app{
+	display: inline-block;
+	color: @color-text-name-app;
+	font-size: @fz-text-name-app;
+	font-weight: 700;
+	padding: 2.5px 0;
 }
 .figure-logo{
 	display: inline-block;
 	margin:0;
-	height: 45px;
-	width: 45px;
+	height: @altura-logo;
+	width: @ancho-logo;
 	a{
 		img{
 			width: 100%;
 		}
 	}
 }
+//fin estilos para logo
 
-.ico-menu{
+//mostrar el icono de menú móvil oculto
+.icono-menu-movil{
 	display: none;
 }
-/*fin*/
 
-/*Contenedor menú*/
-.contenedor-menu{
-	background: @bg-menu;
-	padding: 5px 0;
-}
-/*Estilos para el main-menu y sus hijos*/
-.main-menu{
+/*Estilos para el box-main-menu y sus hijos*/
+.box-main-menu{
 	display: inline-block;
 	float: right;
 	vertical-align: top;
+	height: @altura-menu;
 	.menu{
 		list-style-type: none;
 		padding: 0;
@@ -53,56 +54,44 @@ nav, article, aside, section, main, menu, footer, figure, div{
 		li{
 			display:inline-block;
 			a{
-				border-top: 4px solid transparent;
-				color: #1F1F1F;
+				border-top: @size-border-top solid transparent;
+				color: @color-text-link;
 				display: block;
 				text-align: center;
-				padding: 10px 20px;
+				padding: @padding-link;
+				font-size: @fz-link;
 				&:hover{
 					background: darken(@bg-menu, 2%);
-					border-top: 4px solid white;
-					color: @text-white;
+					border-top: @size-border-top solid @color-border-top;
+					color: @color-text-hover;
 				}
 			}
 		}
 	}
 }
-/*fin*/
+/*fin Estilos para el box-main-menu y sus hijos*/
 
-/*varios*/
-.presentacion{
-	margin-top: 2em;
-	h1{
-		text-align: center;
-	}
-	p{
-		font-size: 18px;
-		text-align: center;
+//esta clase sirve para resaltar el item seleccionado del menú 
+.active{
+	background: darken(@bg-menu, 4%);
+	border-radius: 3px; 
+	> a{
+		color: @text-color-active !important;
 	}
 }
 
-/*mediaqueries*/
-@media screen and (max-width: 480px){
-
-}
 @media (max-width: 767px){
 
-	/*Contenedor menú*/
-	.contenedor-menu{
-		background: @bg-menu;
-		padding-top: 5px;
-		padding-bottom: 5px;
-	}
-	.contenedor-ico{
+	.contenedor-iconos{
 		display: block;
-		height: 45px;
+		height: @altura-contenedor-iconos; //45px
 	}
 	.figure-logo{
 		display: block;
 		margin:0 auto;
 		float: left;
-		height: 45px;
-		width: 45px;
+		height: @altura-logo-movil;
+		width: @ancho-logo-movil;
 
 		a{
 			img{
@@ -111,19 +100,20 @@ nav, article, aside, section, main, menu, footer, figure, div{
 		}
 	}
 
-	.ico-menu{
-		background: white;
+	.icono-menu-movil{
+		background: transparent;
 		border-radius: 3px;
+		border: 1px solid @color-borde-icono;
 		cursor: pointer;
-		padding: 5px 7px;
-		margin-top: 6.6px;
+		padding: 4px 7px;
+		margin-top: 6.5px;
 		display: block;
 		float: right;
-		height: 32px;
+		height: 33px;
 		width: 38px;
 	}
-	/*Estilos para el main-menu y sus hijos*/
-	.main-menu{
+	/*Estilos para el box-main-menu y sus hijos*/
+	.box-main-menu{
 		border-top: thin solid #E1E1E1;
 		display: none;
 		padding-top: 6.5px;
@@ -131,8 +121,8 @@ nav, article, aside, section, main, menu, footer, figure, div{
 		margin-left: -15px;
 		margin-right: -15px;
 		float: none;
+		height: 100%;
 		.menu{
-			display: block;
 			list-style-type: none;
 			text-align: center;
 			margin-left: 15px;
@@ -140,33 +130,36 @@ nav, article, aside, section, main, menu, footer, figure, div{
 			li{
 				margin-top: 3px;
 				a{
-					border-top: 4px solid transparent;
+					border-top: @size-border-top solid transparent;
 					display: block;
 					text-align: center;
-					padding: 10px 20px;
+					padding: @padding-link-movil;
 					&:hover{
 						background: darken(@bg-menu, 2%);
-						border-top: 4px solid white;
-						color: @text-white;
+						border-top: @size-border-top solid @color-border-top;
+						color: @color-text-hover;
 					}
 				}
 			}
 		}
 	}
 	/*fin*/
-	.ico-menu-left{
+	.icono-menu-movil-left{
 		display: block;
-		height: 45px;
+		height: @altura-logo;
 		.figure-logo{
 			float: right;
 		}
-		.ico-menu{
+		.name-app{
+			float: right;
+		}
+		.icono-menu-movil{
 			float: left;
 		}
 	}
-	.ico-menu-center{
+	.icono-menu-movil-center{
 		display: block;
-		height: 82px;
+		height: @height-menu;
 		width: 100%;
 		.contenedor-logo{
 			background: transparent;
@@ -178,7 +171,11 @@ nav, article, aside, section, main, menu, footer, figure, div{
 				margin: 0 auto 5px auto;
 			}
 		}
-		.ico-menu{
+		.name-app{
+			display: block;
+			text-align: center;
+		}
+		.icono-menu-movil{
 			display: block;
 			margin:0 auto;
 			float: none;
@@ -208,67 +205,58 @@ nav, article, aside, section, main, menu, footer, figure, div{
 			}
 		}
 	}
+	/*clases válidas solo cuando los iconos están al centro, usado con javascript*/
+	//se aplicaran cuando el usuario haga scroll
 	.hide-logo .contenedor-logo{
 		display: none;
 	}
 	.height-menu{
-		height: 42px;
+		height: @altura-menu-movil-scroll;
 		padding-top: 5px;
 		padding-bottom: 5px;
 	}
 
 }
 @media (min-width: 768px) and (max-width: 991px){
-	.contenedor-ico{
+	.contenedor-iconos{
 		display: block;
 	}
 	.figure-logo{
 		display: block;
 		margin:0 auto 5px auto;
-		height: 45px;
-		width: 45px;
+		height: @altura-logo;
+		width: @ancho-logo;
 		a{
 			img{
 				width: 100%;
 			}
 		}
 	}
-	.hide-logo{
-		display: none !important;
+	.name-app{
+		display: block;
+		text-align: center;
 	}
-	/*Estilos para el main-menu y sus hijos*/
-	.main-menu{
+	/*Estilos para el box-main-menu y sus hijos*/
+	.box-main-menu{
+		display: block;
 		float: none;
 		vertical-align: top;
+		height: 100%;
 		.menu{
 			list-style-type: none;
 			padding: 0;
-			margin: 0;
+			margin: 0 auto;
 			text-align: center;
 			li{
 				display:inline-block;
 				margin-top: 3px;
-				a{
-					border-top: 4px solid transparent;
-					display: block;
-					text-align: center;
-					padding: 10px 20px;
-					&:hover{
-						background: darken(@bg-menu, 2%);
-						border-top: 4px solid white;
-						color: @text-white;
-					}
-				}
 			}
 		}
 	}
 	/*fin*/
-}
-@media (min-width: 992px) and (max-width: 1199px){
 
-
-}
-@media (min-width: 1200px)
-{
-	
+	//clase para ocultar el logo cuando el usuario hace scroll
+	.hide-logo{
+		display: none !important;
+	}
 }

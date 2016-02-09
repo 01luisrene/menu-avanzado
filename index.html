@@ -8,130 +8,272 @@
 	<meta name="application-name" content=">Menú Web Lince v1.0"/>
 	<title>Menú Web Lince</title>
 	<!--Usaremos bootstrap para dar una agradable apariencia al diseño-->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
 	<!--Link a la hoja de estilos -->
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/libs/monokai-sublime.css">
+	<style>
+	.presentacion{
+		margin-top: 2em;
+	}
+	h1{
+		text-align: center;
+	}
+	p.text-presentacion{
+		font-size: 18px;
+		text-align: center;
+	}
+	p{
+		font-size: 16px;
+	}
+	.version-project{
+		font-size: 1.5em;
+		font-weight: normal;
+	}
+	</style>
 </head>
-<body>
-	<header>
-	<nav class="contenedor-menu" id="js-contenedor-menu"><!--Contenedor menú-->
-		<div class="container">
-				<div class="contenedor-ico ico-menu-center"><!--Aquí colocar las clases de como mostrar el icono del menú-->
-					<span class="contenedor-logo" id="js-contenedor-logo">
-						<figure class="figure-logo">
-						<!--Cambia el link a tu web-->
-						<a href="/">
-							<img src="images/logo.png" alt="Logo" title="Logo">
-						</a>
-						</figure>
-					</span>
-					<div class="ico-menu" id="js-ico-menu">
-						<img src="images/ico-menu.png" alt="Menú">
-					</div>
-				</div>
-				<nav class="main-menu">
-					<ul class="menu">
-						<li class="active">
-							<a href="#">Home</a>
-						</li>
-						<li>
-							<a href="#">Diseño web</a>
-						</li>
-						<li>
-							<a href="#">Apps</a>
-						</li>
-						<li>
-							<a href="#">Productos</a>
-						</li>
-						<li>
-							<a href="#">Equipo</a>
-						</li>
-						<li>
-							<a href="#">Contacto</a>
-						</li>
-						<li>
-							<a href="#">Acerca</a>
-						</li>
-					</ul>
-				</nav>
-		</div>
-	</nav> <!--Fin contenedor menú-->
+<body id="home">
+<header>
+<nav class="contenedor-menu" id="js-contenedor-menu"><!--contenedor menú-->
+  <div class="container"><!--sirve solo para bootstrap-->
+    <div class="contenedor-iconos"><!--aquí va la clase de como se mostrara el icono menú móvil-->
+      <span class="contenedor-logo" id="js-contenedor-logo"><!--contenedor logo-->
+      	<!--<span class="name-app">Menú Web Lince</span>--> <!--activarlo si van a usar el nombre de la app-->
+      	<figure class="figure-logo">
+          <a href="#home"><!--cambia el link a tu web-->
+	        <img src="images/logo.png" alt="Logo" title="Logo"><!--ruta de tu logo img-->
+          </a>
+        </figure>
+      </span><!--fin contenedor logo-->
+      <div class="icono-menu-movil" id="js-icono-menu-movil"> <!--contenedor icono menú móvil-->
+        <img src="images/ico-menu.png" alt="Menú"> <!--imagen icono menú móvil-->
+      </div><!--fin contenedor icono menú móvil-->
+    </div>
+  <div class="box-main-menu"><!--clase utilizada en js-->
+    <ul class="menu"> <!--colocar la clase de como se mostrara lo items del menú-->
+      <li class="active"><!--clase active se usa para resaltar el item seleccionado del menú-->
+        <a href="#home">Home</a>
+      </li>
+      <li>
+        <a href="#html">HTML</a>
+      </li>
+      <li>
+        <a href="#css">CSS</a>
+      </li>
+      <li>
+        <a href="#less">LESS</a>
+      </li>
+      <li>
+        <a href="#javascript">JavaScript</a>
+      </li>
+      <li>
+        <a href="#uso">Uso</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav> <!--fin contenedor menú-->
+</header>
+<section class="container well presentacion">
+	<h1>Menú Web Lince</h1>
+	<p class="text-presentacion">Menú desarrollado para que ahorren el tiempo que toma hacerlo, ya que tendrán una idea de como comenzar.</p>
+</section>
+<article class="container">
+<div id="html">
+<h2>Código HTML para el <strong>Menú Web Lince</strong></h2>
+<p>Código <strong>HTML</strong> limpio sin comentarios de ayuda, para ver la ayuda tiene que editar el el archivo <code>index.html</code>.</p>
 
+<pre><code>&#60;nav class="contenedor-menu" id="js-contenedor-menu"&#62;
+  &#60;div class="container"&#62;&#60;!--sirve solo para bootstrap--&#62;
+    &#60;div class="contenedor-iconos"&#62;
+      &#60;span class="contenedor-logo" id="js-contenedor-logo"&#62;
+      	&#60;figure class="figure-logo"&#62;
+          &#60;a href="#home"&#62;
+	        &#60;img src="images/logo.png" alt="Logo" title="Logo"&#62;
+          &#60;/a&#62;
+        &#60;/figure&#62;
+      &#60;/span&#62;
+      &#60;div class="icono-menu-movil" id="js-icono-menu-movil"&#62;
+        &#60;img src="images/ico-menu.png" alt="Menú"&#62;
+      &#60;/div&#62;
+    &#60;/div&#62;
+  &#60;div class="box-main-menu"&#62;
+    &#60;ul class="menu"&#62;
+      &#60;li class="active"&#62;
+        &#60;a href="#home"&#62;Home&#60;/a&#62;
+      &#60;/li&#62;
+      &#60;li&#62;
+        &#60;a href="#html"&#62;HTML&#60;/a&#62;
+      &#60;/li&#62;
+      &#60;li&#62;
+        &#60;a href="#css"&#62;CSS&#60;/a&#62;
+      &#60;/li&#62;
+      &#60;li&#62;
+        &#60;a href="#less"&#62;LESS&#60;/a&#62;
+      &#60;/li&#62;
+      &#60;li&#62;
+        &#60;a href="#javascript"&#62;JavaScript&#60;/a&#62;
+      &#60;/li&#62;
+      &#60;li&#62;
+        &#60;a href="#uso"&#62;Uso&#60;/a&#62;
+      &#60;/li&#62;
+    &#60;/ul&#62;
+  &#60;/div&#62;
+&#60;/div&#62;
+&#60;/nav&#62;</code>
+</pre>
 
-	</header>
-	<section class="container well presentacion">
-			<h1>Menú Web Lince</h1>
-			<p>Menú desarrollado para que ahorren el tiempo que toma hacerlo, ya que tendrán una idea de como comenzar.</p>
-	</section>
-	<article class="container">
-			<h2>¿Qué es Lorem Ipsum?</h2>
-		<p>
-			Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.
-		</p>
-		<h2>¿Por qué lo usamos?</h2>
-		<p>
-			Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de las letras, al contrario de usar textos como por ejemplo "Contenido aquí, contenido aquí". Estos textos hacen parecerlo un español que se puede leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de "Lorem Ipsum" va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo).
-		</p>
-		<h2>¿De dónde viene?</h2>
-		<p>
-			Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo, haciendo que este adquiera mas de 2000 años de antiguedad. Richard McClintock, un profesor de Latin de la Universidad de Hampden-Sydney en Virginia, encontró una de las palabras más oscuras de la lengua del latín, "consecteur", en un pasaje de Lorem Ipsum, y al seguir leyendo distintos textos del latín, descubrió la fuente indudable. Lorem Ipsum viene de las secciones 1.10.32 y 1.10.33 de "de Finnibus Bonorum et Malorum" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, "Lorem ipsum dolor sit amet..", viene de una linea en la sección 1.10.32
-		</p>
-		<h2>¿Dónde puedo conseguirlo?</h2>
-		<p>
-			Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.
-		</p>
-		<h2>¿Quines somos?</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis aliquam, placeat dolor aperiam, soluta eligendi amet consequatur asperiores officiis dolorum est, sunt expedita pariatur ratione nesciunt ut reprehenderit, delectus ab.</p>
-		<p>Rerum recusandae nesciunt quam quis culpa soluta ipsam, voluptas magnam atque, aut nisi dolorum labore tempora mollitia exercitationem fuga suscipit! Ex, adipisci! Veritatis distinctio, laboriosam, dolorum nobis delectus libero blanditiis.</p>
-		<p>Fuga possimus reiciendis ab velit ipsam, alias nisi rerum architecto dolores in minus necessitatibus voluptas dolore consequuntur molestiae, iusto rem voluptatum autem, eligendi mollitia. Eligendi libero unde expedita mollitia nemo.</p>
-		<p>Nesciunt odio neque dolor facilis cum laudantium repellendus hic, perferendis. Hic fugiat amet incidunt repellat ratione commodi qui dicta officia, eveniet molestias dolorem assumenda, porro cupiditate nobis nostrum necessitatibus! Accusantium?</p>
-		<p>Quidem quis obcaecati placeat hic magnam, omnis perspiciatis nihil iste amet voluptates, in non a saepe illo. Explicabo veritatis odio expedita fugiat numquam, placeat esse quia ducimus adipisci. Quis, deserunt.</p>
-		<p>Explicabo iure, atque repellendus, pariatur quidem reprehenderit quas ex enim quis expedita rerum dolorum ipsum deserunt fuga dignissimos commodi architecto omnis voluptatum! Ipsam libero beatae, quidem obcaecati quasi fugit sint.</p>
-		<p>Voluptatem neque dicta soluta quos deleniti ipsa cum, incidunt quidem, debitis aspernatur eum repudiandae esse aliquid atque sint alias tempore, iure veritatis pariatur dolor. Assumenda laborum, voluptates quo cum illum.</p>
-		<p>Minima praesentium atque unde quia quisquam possimus quae nisi sequi voluptates placeat qui nemo excepturi deserunt magnam accusantium illum ducimus, dolore non numquam hic laboriosam optio ad reprehenderit sapiente? Id!</p>
-		<p>Incidunt rem placeat, dolorem debitis. Atque vero sit ipsam modi iure sed minima omnis tempora placeat esse provident ipsa natus enim incidunt eius, quod obcaecati vel expedita, quae saepe suscipit.</p>
-		<p>Repellendus est distinctio sed veniam ullam dolore sequi, laudantium ducimus numquam ipsum minus culpa eum provident a pariatur, adipisci dignissimos ad optio blanditiis, commodi quibusdam! Nesciunt harum eaque delectus ad.</p>
-		<p>Neque, necessitatibus eius nemo atque obcaecati nisi quos facere temporibus amet quam maiores similique aliquam, velit alias nam. Debitis unde optio animi repellat rem iusto, voluptas sit minus at natus.</p>
-		<p>Enim animi deserunt, natus asperiores delectus, culpa adipisci totam iste, recusandae, eaque vitae? Nostrum repellat animi quo earum, corrupti. Repudiandae repellat tempora eos, exercitationem consequatur vero facere numquam aspernatur excepturi?</p>
-		<p>At dicta doloribus maxime facilis nobis soluta. Aut nobis praesentium incidunt, quas nisi! Nobis sunt velit blanditiis aperiam et, accusantium dignissimos consequuntur rem est repellat impedit laudantium, nulla fugiat cum.</p>
-		<p>Libero, pariatur delectus nam necessitatibus assumenda ipsam aliquam quia sunt quas? Totam voluptas modi veritatis, magni suscipit quia praesentium maxime autem vero voluptate aliquam quidem dolorum, eligendi nostrum tenetur minima!</p>
-		<p>Odio consequatur, dicta. Sunt, autem, dignissimos. Ipsum in eius sapiente dolorem maiores itaque vel nulla et ab, earum sunt beatae minus eum tempore necessitatibus consequatur provident! Adipisci, id quas perferendis?</p>
-		<p>Temporibus accusantium, quo ducimus quibusdam placeat voluptatem vero quia nobis distinctio impedit, cumque consectetur minus debitis officia perferendis autem, odio ex suscipit expedita repellat ullam provident. Ipsam expedita voluptatibus, ullam?</p>
-		<p>Explicabo cum ipsum similique possimus, in ipsam nesciunt rem vel aut, minus fuga quibusdam, praesentium, deleniti voluptate asperiores ea quod esse voluptates consectetur. Id voluptas dolores, neque quam praesentium adipisci.</p>
-		<p>Sit obcaecati alias reiciendis nostrum blanditiis veritatis tenetur, sint velit, labore accusamus. Asperiores et, in sit nam, sint atque. Exercitationem aspernatur nulla error non voluptate deleniti iste, beatae omnis dolore!</p>
-		<p>Perferendis ipsum libero harum molestias vero excepturi tempore doloribus pariatur, iure autem eum cumque quod. Saepe quae repudiandae quis vero fugit aliquid natus quidem sed deserunt laudantium minima, eligendi ipsum.</p>
-		<p>Adipisci, voluptates? Quasi quam minima iure. Magni perspiciatis obcaecati eveniet doloribus quam explicabo nisi eum omnis quod. Corporis quidem mollitia assumenda amet corrupti repudiandae, tempore ipsam molestiae atque, itaque aspernatur.</p>
-		<p>Beatae, error consequatur molestias? Adipisci beatae, expedita nesciunt reprehenderit. Ea distinctio repellendus deleniti modi soluta praesentium nobis doloribus inventore sint ut incidunt deserunt velit, non, voluptatem, culpa dicta quaerat quae.</p>
-		<p>Nisi veritatis eveniet, non. Id repellat, odit impedit, dolore consequuntur aspernatur vero obcaecati et. Tempora deleniti eum quisquam iste alias officia aliquid, autem provident ipsum, itaque vel, earum laborum a.</p>
-		<p>Animi voluptas optio alias? Cum porro pariatur praesentium iste ut odit accusantium alias saepe molestias similique eius, incidunt non atque dolores dolor, aut nisi cupiditate cumque, autem aspernatur, officiis voluptate.</p>
-		<p>Quam architecto beatae eos itaque voluptatem! Rem ea voluptas ipsa quisquam, non similique sint dolores vitae dolorum adipisci dolorem reprehenderit, qui. Voluptates, consequuntur est quibusdam sed alias officiis ullam ipsam.</p>
-		<p>Laboriosam nemo unde quaerat, eius possimus, esse libero. Deleniti accusamus, nulla iure id quod fugit, dignissimos! Excepturi dignissimos facere sequi hic tempore doloribus nisi, veniam, soluta commodi libero incidunt ipsam.</p>
-		<p>Asperiores ipsam ducimus expedita? Nobis aperiam possimus sequi amet. Magni, asperiores quam animi tempore nam assumenda quos, laboriosam maxime vero ex ratione dolore. Facere beatae dolore, ab temporibus, laborum inventore.</p>
-		<p>Ut quas laudantium illum autem, nulla voluptate consequatur officia nobis dolor placeat, in nam voluptatum consequuntur cumque rem. Nemo obcaecati id minus dicta velit nihil vitae aspernatur porro veniam facilis?</p>
-		<p>Facilis rerum nobis modi nostrum necessitatibus quas, quos dolorem ullam soluta, et, perspiciatis harum debitis! Eum culpa at non quasi sed voluptate quaerat a mollitia, laudantium, iure quia accusantium nostrum.</p>
-		<p>Aspernatur qui adipisci voluptas explicabo, vero autem, repellendus praesentium rem ipsa modi, aliquam magnam ullam repudiandae quas, omnis asperiores? Nulla distinctio cupiditate odio temporibus quidem in repellendus quis quia est.</p>
-		<p>Sunt ad, id unde? Unde illo itaque expedita cum, ad ipsum quasi tempore voluptates nam error quaerat rem debitis, similique iusto perspiciatis quo porro dolorum nihil pariatur, tenetur optio illum.</p>
-		
-	</article>
-	<footer>
+</div>
+<div id="css">
+	<h2>Estilos <strong>CSS</strong></h2>
+	<p>Para esta pequeña aplicación he utilizado los media queries de bootstrap</p>
+	<pre><code>@media (min-width: 768px) and (max-width: 991px){}</code></pre>
+	<pre><code>@media (max-width: 767px){}</code></pre>
+</div>	
+
+<div id="less">
+	<h2><strong>LESS</strong></h2>
+	<p>Este proyecto tiene tres archivos <strong>LESS</strong> con los siguientes nombres (<code>main.less</code>, <code>estilos.less</code>, <code>variables.less</code>).</p>
+	<p><strong><code>main.less</code></strong>: este archivo como su nombre lo dice es el principal.</p>
+
+	<p><strong><code>estilos.less</code></strong>: este archivo contiene todos los estilos.</p>
+
+	<p><strong><code>variables.less</code></strong>: este archivo contiene todas las variables.</p>
+<h4>Compilar de LESS a CSS</h4>
+<p>Hay muchas formas de compilar archivos <strong>LESS</strong> a <strong>CSS</strong>, para facilitar las cosas utilizaremos una apliación.</p>
+<p>En mi caso utilizare <a href="http://winless.org/">WinLess</a>, ya que uso el <strong>sistema operativo Windows</strong>, si usas otro sistema operativo solo te bastara buscar un poco.</p>
+<h4>Variables LESS.</h4>
+<pre><code>//variables
+@bg-menu: lighten(#008C69, 10%);
+
+//name app
+@color-text-name-app: #242424;
+@fz-text-name-app: 2em;
+
+//logo
+//cambiar la variable si quiere modificar el tamaño por defecto, afecta a todo el menú web tenga cuidado
+@altura-logo: 45px; 
+@ancho-logo: @altura-logo; //ancho del logo
+
+//variables para desktop
+@altura-menu: @altura-logo; //altura del menú web
+
+//link
+@color-text-link: #1F1F1F; //color de texto por defecto item del menú
+@fz-link: 14px; // tamaño del texto para los item del menú
+@padding-link: ((@altura-logo / 2) - 12.5) 20px; //padding de los link
+@size-border-top: 4px; //tamaño borde top cuando cuando se pasa el mouse
+@color-border-top: #FFFF42; //color borde top cuando cuando se pasa el mouse
+@color-text-hover: #fff; //color de texto para hover
+@text-color-active: #fff; //color del texto cuando se aplica la clase active
+
+/*variables para icono-menu-center*/
+@altura-contenedor-iconos: 45px; //altura del contenedor de iconos
+@height-menu: 82px; //altura inicial
+@altura-menu-movil-scroll: 45px; //altura cuando el usuario hace scroll
+//alto y ancho del logo para móvil
+@altura-logo-movil: 45px;
+@ancho-logo-movil: 45px;
+
+@padding-link-movil: 10px 20px; //padding para los link menú web
+
+//color del borde del icono del menú móvil
+@color-borde-icono: #606060;</code></pre>
+</div>
+
+<div id="javascript">
+	<h2><strong>JavaScript</strong></h2>
+	<p>Utilize <a href="http://code.jquery.com/jquery-1.12.0.min.js" target="_blank"><code>jQuery</code></a> para que funcione.</p>
+	<p>Código Javacript para el <strong>Menú Web Lince</strong>.</p>
+
+	<pre><code>$(document).ready(function(){
+	var menu = $('.box-main-menu');
+	/*
+	Esta línea de código llama a la función de la libreria scrollToFixed
+	----
+	Sirve para que el menú se quede fijo
+	*/
+	$('#js-contenedor-menu').scrollToFixed();
+
+	/*
+	Esta función sirve para que cuando el usuario haga click en el botón de menú se despliegue o repliegue.
+	----
+	Se podra apreciar en pantallas menores a 768px
+	*/
+	$('#js-icono-menu-movil').on('click',function(e){
+		e.preventDefault();
+		menu.slideToggle();                 
+	});
+
+	//Esta función sirve para validar cuando el navegador, es cambiado de tamaño manualmente.
+	$(window).resize(function() {
+		//esta condición sirve para mostrar el menú si esta oculto.
+		//cuando la pantalla sea mayor a 768px
+		var w = $(window).width();
+		if (w > 768 && menu.is(':hidden')) {
+			menu.removeAttr('style');
+		};
+	});
+
+	var scroleo = function(ancho){
+		if($(window).scrollTop() > 1) {
+			if(ancho >= 768 && ancho <= 991){
+				$('#js-contenedor-menu #js-contenedor-logo').addClass('hide-logo');
+			}
+			if(ancho <= 767){
+				$('#js-contenedor-menu .icono-menu-movil-center').addClass('hide-logo height-menu');
+			}
+		} else{
+			if(ancho >= 768 && ancho <= 991){
+				$('#js-contenedor-menu #js-contenedor-logo').removeClass('hide-logo');
+			}
+			if(ancho <= 767){
+				$('#js-contenedor-menu .icono-menu-movil-center').removeClass('hide-logo height-menu');
+			}
+		}
+	};
+
+	$(window).on('scroll', function() {
+		var ancho = $(window).width();
+		scroleo(ancho)
+		//Esta función sirve para validar cuando el navegador, es cambiado de tamaño manualmente. 
+		$(window).resize(function() {
+			var ancho = $(window).width();
+			scroleo(ancho);
+		});
+	});
+});</code></pre>
+</div>
+
+<div id="uso">
+	<h2>Como implementar en un proyecto</h2>
+</div>	
+</article>
+	<footer class="container-fluid well">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					footer
+					<h2>Autor</h2>
+					<a href="http://01luisren.com" target="_blank">01luisrene</a>
 				</div>
 				<div class="col-lg-4">
-					footer
+					<h2>Redes sociales</h2>
+					<p><a href="https://facebook.com/01luisrene" target="_blank">Facebook</a></p>
+					<p><a href="https://twitter.com/01luisrene" target="_blank">Twitter</a></p>
 				</div>
 				<div class="col-lg-4">
-					footer
+					<h2>Versión</h2>
+					<span class="version-project">Menú Web Lince v. 1.0</span>
 				</div>
 			</div>
+
 		</div>
 	</footer>
 
 	<!--archivos javascript-->
-	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-	<script src="js/jquery-scrolltofixed-min.js"></script>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/jquery-scrolltofixed-min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
