@@ -10,5 +10,3 @@ Usado solamente para darle apariencia al diseño.
 ## Librerías JS
 
 [jQuery](https://jquery.com/download/)
-
-[ScrollToFixed](https://github.com/bigspotteddog/ScrollToFixed)
