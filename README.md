@@ -10,3 +10,7 @@ Usado solamente para darle apariencia al diseño.
 ## Librerías JS
 
 [jQuery](https://jquery.com/download/)
+
+## Manual
+
+El manual de uso esta incluido en el archivo `index.html`, que se encuentra en el proyecto.
