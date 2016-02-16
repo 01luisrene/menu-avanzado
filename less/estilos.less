@@ -6,6 +6,10 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+img{
+	max-width: 100%;
+}
+
 //contenedor menú
 .contenedor-menu{
 	background: @bg-menu;
@@ -161,7 +165,7 @@ nav, article, aside, section, main, menu, footer, figure, div{
 		display: block;
 		height: @height-menu;
 		width: 100%;
-		.contenedor-logo{
+		.contenedor-logo-nameapp{
 			background: transparent;
 			display: block;
 			width: 100%;
@@ -207,7 +211,7 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	}
 	/*clases válidas solo cuando los iconos están al centro, usado con javascript*/
 	//se aplicaran cuando el usuario haga scroll
-	.hide-logo .contenedor-logo{
+	.hide-logo .contenedor-logo-nameapp{
 		display: none;
 	}
 	.height-menu{
@@ -259,4 +263,12 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	.hide-logo{
 		display: none !important;
 	}
+}
+
+/*********************No tomar importancia****************************/
+//menú fijo
+.menu-fijo {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }

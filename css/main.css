@@ -15,6 +15,9 @@ div {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+img {
+  max-width: 100%;
+}
 .contenedor-menu {
   background: #00bf8f;
   padding: 5px 0;
@@ -154,12 +157,12 @@ div {
     height: 82px;
     width: 100%;
   }
-  .icono-menu-movil-center .contenedor-logo {
+  .icono-menu-movil-center .contenedor-logo-nameapp {
     background: transparent;
     display: block;
     width: 100%;
   }
-  .icono-menu-movil-center .contenedor-logo .figure-logo {
+  .icono-menu-movil-center .contenedor-logo-nameapp .figure-logo {
     display: block;
     float: none;
     margin: 0 auto 5px auto;
@@ -192,7 +195,7 @@ div {
     text-align: center !important;
   }
   /*clases válidas solo cuando los iconos están al centro, usado con javascript*/
-  .hide-logo .contenedor-logo {
+  .hide-logo .contenedor-logo-nameapp {
     display: none;
   }
   .height-menu {
@@ -239,4 +242,10 @@ div {
   .hide-logo {
     display: none !important;
   }
+}
+/*********************No tomar importancia****************************/
+.menu-fijo {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
