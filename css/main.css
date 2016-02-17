@@ -22,7 +22,7 @@ img {
   background: #00bf8f;
   padding: 5px 0;
 }
-.contenedor-iconos {
+.contenedor-ico-nameapp {
   display: inline-block;
 }
 .name-app {
@@ -81,7 +81,7 @@ img {
   color: #ffffff !important;
 }
 @media (max-width: 767px) {
-  .contenedor-iconos {
+  .contenedor-ico-nameapp {
     display: block;
     height: 45px;
   }
@@ -157,12 +157,12 @@ img {
     height: 82px;
     width: 100%;
   }
-  .icono-menu-movil-center .contenedor-logo-nameapp {
+  .icono-menu-movil-center .logo-nameapp {
     background: transparent;
     display: block;
     width: 100%;
   }
-  .icono-menu-movil-center .contenedor-logo-nameapp .figure-logo {
+  .icono-menu-movil-center .logo-nameapp .figure-logo {
     display: block;
     float: none;
     margin: 0 auto 5px auto;
@@ -195,7 +195,7 @@ img {
     text-align: center !important;
   }
   /*clases válidas solo cuando los iconos están al centro, usado con javascript*/
-  .hide-logo .contenedor-logo-nameapp {
+  .hide-logo .logo-nameapp {
     display: none;
   }
   .height-menu {
@@ -205,7 +205,7 @@ img {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .contenedor-iconos {
+  .contenedor-ico-nameapp {
     display: block;
   }
   .figure-logo {

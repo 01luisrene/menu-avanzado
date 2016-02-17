@@ -1,86 +1,128 @@
-$(document).ready(function(){
-	var list_menu = $('.box-main-menu'),
+'use strict';
+var a_view = $(window).width(),
+		list_menu = $('.box-main-menu'),
 		menu_fijo = $('#js-contenedor-menu'),
-		menu_offset = menu_fijo.offset();
-	/*
-	Esta función sirve para que cuando el usuario haga click en el botón de Menú Web se despliegue o repliegue.
-	----
-	Solo se podrá apreciar en pantallas menores a 768px
-	*/
-	$('#js-icono-menu-movil').on('click',function(e){
-		e.preventDefault();
-		list_menu.slideToggle();                 
-	});
+		menu_offset = menu_fijo.offset(),
+		logo_tablet = $('#js-contenedor-menu #js-logo-nameapp'),
+		logo_smartphone = $('#js-contenedor-menu .icono-menu-movil-center');
 
-	//resize sirve para validar cuando el navegador es cambiado de tamaño manualmente.
-	$(window).resize(function() {
-		/*
-		esta condición sirve para mostrar el menú si esta oculto.
-		---------
-		cuando la pantalla sea mayor a 768px
-		*/
-		var w = $(window).width();
-		if (w > 768 && list_menu.is(':hidden')) {
-			list_menu.removeAttr('style');
-		};
-	});
+var menuWebLince = (function ($) {
 
+	 //======= Función para Menú fijo =======
+	var	menu_movil_fijo = function(){
 
-	$(window).on('scroll', function() {
-		//========== Menú fijo ===========
-		/*
-			Cuando el usuario haga scroll automáticamente el menú web se quedara estático
-		*/
 		if($(window).scrollTop() > menu_offset.top) {
 		  menu_fijo.addClass('menu-fijo');
 		} else {
 		  menu_fijo.removeClass('menu-fijo');
 		}
 
-		var ancho = $(window).width();
-		scroleo(ancho)
-
-		//resize sirve para validar cuando el navegador es cambiado de tamaño manualmente. 
-		$(window).resize(function() {
-			var ancho = $(window).width();
-			scroleo(ancho);
+	},
+	//======= Función Menú: Sirve para desplegar o replegar el menú en equipos móviles =======
+	toggle_menu = function(){
+		$('#js-icono-menu-movil').on('click',function(e){
+			e.preventDefault();
+			list_menu.slideToggle();                 
 		});
-	});
-
-	var scroleo = function(ancho){
-		if($(window).scrollTop() > 1) {
-			//Esta condición se cumple si la pantalla es mayor o igual a 768px y menor o igual a 991px
-			if(ancho >= 768 && ancho <= 991){
-				/**
-				Si la condición se cumple agregamos la clase hide-logo
-				**/
-				$('#js-contenedor-menu #js-contenedor-logo-nameapp').addClass('hide-logo');
-			}
-			/*
-			Esta condición se cumple si el contenedor con la clase contenedor-iconos tiene al lado clase icono-menu-movil-center
+	},
+	//======= Esta función sirve para mostrar el menú, cuando el usuario repliega el menú con la función toggle_menu =======
+	mostrar_menu = function() {
+		/*
+			Esta condición se cumple cuando la pantalla sea mayor a 768px
 			--------
-			y la pantalla sea menor o igual a 767
-			*/
-			if(ancho <= 767){
-				/**
-				Si la condición se cumple agregamos las clases hide-logo height-menu
-				**/
-				$('#js-contenedor-menu .icono-menu-movil-center').addClass('hide-logo height-menu');
-			}
-		} else{
-			/**
-				Si no se cumple removemos la clase hide-logo
-			**/
-			if(ancho >= 768 && ancho <= 991){
-				$('#js-contenedor-menu #js-contenedor-logo-nameapp').removeClass('hide-logo');
-			}
+			y es usado solo en el evento resize de la función g_function_nav
+		*/
+		var w = $(window).width();
+		if (w > 768 && list_menu.is(':hidden')) {
+			list_menu.removeAttr('style');
+		};
+	},
+	//======= Función creada para agregar o eliminar clases, según sus condiciones internas =======
+	cond_nav = function(ancho){
+		if(ancho >= 768 && ancho <= 991){
 
-			/**
-				Si no se cumple removemos las clases hide-logo y height-menu
-			**/
+			logo_tablet.addClass('hide-logo');
+
+		}else
+		{
+			logo_tablet.removeClass('hide-logo');
+		}
+
+		if(ancho <= 767){
+		
+			logo_smartphone.addClass('hide-logo height-menu');
+
+		}else{
+
+			logo_smartphone.removeClass('hide-logo height-menu');
+		}
+	},
+		//======= Función creada para agregar o eliminar clases, según sus condiciones internas y el scrollTop sea mayor a 1px =======
+	cond_nav_scroll = function(ancho){
+		
+			if($(window).scrollTop() > 1){
+			if(ancho >= 768 && ancho <= 991){
+				logo_tablet.addClass('hide-logo');
+			}
 			if(ancho <= 767){
-				$('#js-contenedor-menu .icono-menu-movil-center').removeClass('hide-logo height-menu');
+				logo_smartphone.addClass('hide-logo height-menu');
+			}
+			
+		}else{
+			if(ancho >= 768 && ancho <= 991){
+				logo_tablet.removeClass('hide-logo');
+			}
+			if(ancho <= 767){
+				logo_smartphone.removeClass('hide-logo height-menu');
 			}
 		}
-	};
-});
+	},
+	//======= Función global del menú web =======
+	g_function_nav = function(){
+		cond_nav(a_view);
+		cond_nav_scroll(a_view);
+
+		$(window).on('resize', function(){
+			var a_r = $(this).width();
+
+			//======= Mostrar menú web =======
+			mostrar_menu();
+
+			if($(window).scrollTop() > 1){
+				cond_nav(a_r);
+			}
+
+			$(window).on('scroll', function(){
+				cond_nav_scroll(a_r);
+			});
+		});
+	},
+	//======= Función scroll del menú web =======
+	scroll_nav = function(){
+		$(window).on('scroll', function() {
+			//====== Función cond_nav_scroll =======
+			cond_nav_scroll(a_view);
+
+			//======= Función de menú fijo
+			menu_movil_fijo();
+
+		});
+	},
+	// MenuWebLince javascripts inicialización
+  init = function () {
+    menu_movil_fijo();
+    toggle_menu();
+		g_function_nav();
+		scroll_nav();
+
+  };
+
+  return {
+      init: init
+  };
+
+})(jQuery);
+
+(function () {
+    menuWebLince.init();
+})();

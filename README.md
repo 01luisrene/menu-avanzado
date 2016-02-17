@@ -11,6 +11,6 @@ Usado solamente para darle apariencia al diseño.
 
 [jQuery](https://jquery.com/download/)
 
-## Manual
+## Manual de uso
 
 El manual de uso esta incluido en el archivo `index.html`, que se encuentra en el proyecto.
