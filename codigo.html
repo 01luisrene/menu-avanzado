@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<!--Importante para visualización en web móvil-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="application-name" content=""/>
+	<meta name="description" content="">
+	<title></title>
+	<!--Usaremos bootstrap para dar una agradable apariencia al diseño-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!--Link a la hoja de estilos no olviden incluirlo en su proyecto-->
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+<body>
+	<header><!--Header-->
+		<nav class="contenedor-menu" id="js-contenedor-menu">
+	  <div class="container"><!--sirve solo para bootstrap-->
+	    <div class="contenedor-ico-nameapp"><!--aquí va la clase de como se mostrara el icono menú móvil : icono-menu-movil-left o icono-menu-movil-center -->
+	      <span class="logo-nameapp" id="js-logo-nameapp">
+	      <!--<span class="name-app">Menú Web Lince</span>--> <!--Descomentarlo si van a usar el nombre de la app-->
+	      	<figure class="figure-logo">
+	          <a href="#home">
+		        <img src="images/logo.png" alt="Logo" title="Logo">
+	          </a>
+	        </figure>
+	      </span>
+	      <div class="icono-menu-movil" id="js-icono-menu-movil">
+	        <img src="images/ico-menu.png" alt="Menú">
+	      </div>
+	    </div>
+	  <div class="box-main-menu">
+	    <ul class="menu"><!--Colocar la clase para la apariencia deseada-->
+	      <li class="active">
+	        <a href="#home">Home</a>
+	      </li>
+	      <li>
+	        <a href="#html">HTML</a>
+	      </li>
+	      <li>
+	        <a href="#css">CSS</a>
+	      </li>
+	      <li>
+	        <a href="#less">LESS</a>
+	      </li>
+	      <li>
+	        <a href="#javascript">JavaScript</a>
+	      </li>
+	      <li>
+	        <a href="#uso">Uso</a>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
+	</nav>
+	</header> <!--Fin Header-->
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!--Agregamos el archivo js no olviden incluirlo en su proyecto-->
+	<script src="js/main.min.js"></script>
+</body>
+</html>
