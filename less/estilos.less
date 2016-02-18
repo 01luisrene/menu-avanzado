@@ -6,6 +6,10 @@ nav, article, aside, section, main, menu, footer, figure, div{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+body{
+	padding:0;
+	margin: 0;
+}
 img{
 	max-width: 100%;
 }
@@ -64,10 +68,12 @@ img{
 				text-align: center;
 				padding: @padding-link;
 				font-size: @fz-link;
+				text-decoration: none;
 				&:hover{
 					background: darken(@bg-menu, 2%);
 					border-top: @size-border-top solid @color-border-top;
 					color: @color-text-hover;
+					text-decoration: underline;
 				}
 			}
 		}
